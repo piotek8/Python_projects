@@ -5,7 +5,8 @@ from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import js2py
-# driver.maximize_window() # maximizing the browser windows 
+import ait
+
  
 # Get the path of chromedriver which you have install
 
@@ -18,7 +19,7 @@ if __name__ == '__main__':
         driver = webdriver.Chrome(path)
 
         # opens the program in the maximum web window
-        #driver.maximize_window()
+        driver.maximize_window() # maximizing the browser windows 
 
         # opening the website  in chrome.
         driver.get(url)
@@ -39,13 +40,7 @@ if __name__ == '__main__':
 
 
 
-
-
-
-
-
-
-
+# TRY TRY TRY TRY TRY TRY
 
         #open("C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main",'a')
         #with open('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main', 'r+') as f:
@@ -68,19 +63,10 @@ if __name__ == '__main__':
 #        "else"
 #            "function GetCUID() { return [CUID] });")
 
-#        f = get ('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main.js')
-#        driver.execute_script(f)
+       # f = get ('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main.js')
+       # driver.execute_script(f)
 
-
-
-
-
-
-
-
-
-
-
+# TRY TRY TRY TRY TRY TRY
 
       
         pass
@@ -101,41 +87,47 @@ if __name__ == '__main__':
         
        #driver.find_element('xpath', #set Category advertisement
        #                     '//*[@id="posting-form"]/main/div[1]/div[1]/div/div[1]/div[1]/div/div/div/div/textarea').click()      
+       # I didn't set category because 
 
         def photos(): #creating a function that adds images to cells
             c1 = driver.find_element(By.CSS_SELECTOR, #set Photos jpg in cell 1
                                 'body > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(2)')
-            c1.send_keys(P1)  
+            c1.send_keys(allPhotos)
 
-            c2 = driver.find_element('xpath', #set Photos jpg in cell 2
-                                '(//input[@id="photo-attachment-files"])[2]')
-            c2.send_keys(P2)  
+           #c1.send_keys('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/1.jpeg \n C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/2.jpeg \n C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/3.jpeg \n C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/4.jpeg ')  
 
-            c3 = driver.find_element(By.XPATH, #set Photos jpg in cell 3
-                                '(//input[@id="photo-attachment-files"])[3]')
-            c3.send_keys(P3)    
 
-            c4 = driver.find_element('xpath', #set Photos jpg in cell 4
-                                '/html[1]/body[1]/div[1]/div[1]/form[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]')
-            c4.send_keys(P4)
+           #c1 = driver.find_element(By.CSS_SELECTOR, #set Photos jpg in cell 1
+           #                    'body > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(2)')
+           #c1.send_keys(P1)
+
+           #c2 = driver.find_element('xpath', #set Photos jpg in cell 2
+           #                    '(//input[@id="photo-attachment-files"])[2]')
+           #c2.send_keys(P2)  
+
+           #c3 = driver.find_element(By.XPATH, #set Photos jpg in cell 3
+           #                    '(//input[@id="photo-attachment-files"])[3]')
+           #c3.send_keys(P3)    
+
+           #c4 = driver.find_element('xpath', #set Photos jpg in cell 4
+           #                    '/html[1]/body[1]/div[1]/div[1]/form[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]')
+           #c4.send_keys(P4)
             
-            #c5 = driver.find_element(By.CSS_SELECTOR, #set Photos jpg in cell 5
-            #                    'body > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > input:nth-child(2)')
-            #c5.send_keys(P5) 
-
-            #c6 = driver.find_element(By.XPATH, #set Photos jpg in cell 6
-            #                    '(//input[@id="photo-attachment-files"])[6]')
-            #c6.send_keys(P6)
-            
-            #c7 = driver.find_element(By.XPATH, #set Photos jpg in cell 7
-            #                    '(//input[@id="photo-attachment-files"])[7]')
-            #c7.send_keys(P7)            
-
-            #c8 = driver.find_element(By.XPATH, #set Photos jpg in cell 8
-            #                    '(//input[@id="photo-attachment-files"])[8]')
-            #c8.send_keys(P8)
+           #c5 = driver.find_element(By.CSS_SELECTOR, #set Photos jpg in cell 5
+           #                    'body > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > input:nth-child(2)')
+           #c5.send_keys(P5)     
+           #c6 = driver.find_element(By.XPATH, #set Photos jpg in cell 6
+           #                    '(//input[@id="photo-attachment-files"])[6]')
+           #c6.send_keys(P6)
+           
+           #c7 = driver.find_element(By.XPATH, #set Photos jpg in cell 7
+           #                    '(//input[@id="photo-attachment-files"])[7]')
+           #c7.send_keys(P7)                 
+           #c8 = driver.find_element(By.XPATH, #set Photos jpg in cell 8
+           #                    '(//input[@id="photo-attachment-files"])[8]')
+           #c8.send_keys(P8)
                     
-       # PROBLEM - WHEN I TRY TO ADD FIFTH PHOTO UNFORTUNATELY MY PROGRAM UPLOAD DUPLICATE: FIRST PHOTO AND THIS ONE WHICH I PICKED 
+       # SOLVED PROBLEM - WHEN I TRY TO ADD FIFTH PHOTO UNFORTUNATELY MY PROGRAM UPLOAD DUPLICATE: FIRST PHOTO AND THIS ONE WHICH I PICKED 
         photos()
 
 
@@ -454,20 +446,15 @@ if __name__ == '__main__':
        
         sleep(4294967) 
 
-        
-
-
-
-
-        
+                
 
 
 #    D  E  S  C  R  I  P  T  O  N
  
     # Driver Code
     # Enter below your login credentials
-    username = ""
-    password = ""
+    username = "kaarolinaab2005@interia.pl"
+    password = "Sprzedam1249"
         
     # Data in the advertisement  
     Title = 'Apple iPhone 12 mini 91 % kondycja baterii ładowarka kabel lightning' #must be less than 70 characters
@@ -517,7 +504,7 @@ if __name__ == '__main__':
     P6 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/6.jpeg'
     #P7 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/7.jpeg'
     #P8 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/8.jpeg'
-    
+    allPhotos = P1 + " \n " + P2 + " \n " + P3 + " \n " + P4 + " \n " + P5 + " \n " + P6    
     # URL of the login page of site
     # which you want to automate login.
     url = 'https://pl.login.olx.com/?client_id=b0lcnbsn82kvrtk767nn8pg1k&code_challenge=Ze_PviRH2j_CfriWXlcfaEmhtVm_7eTXiwm81ukc1lc&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fwww.olx.pl%2Fkonto%2Fcallback%2F&st=eyJzbCI6IjE4NWZhY2FmMTljeDVhYTMxOWY3IiwicyI6IjE4NjMzMmZlYmUxeDNjYTMxZDE1IiwiY2MiOjF9&state=eyJyZWZlcnJlciI6Imh0dHBzOlwvXC93d3cub2x4LnBsXC9tb2pvbHhcLyJ9'
