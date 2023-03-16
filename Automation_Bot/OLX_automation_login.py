@@ -453,8 +453,8 @@ if __name__ == '__main__':
  
     # Driver Code
     # Enter below your login credentials
-    username = "kaarolinaab2005@interia.pl"
-    password = "Sprzedam1249"
+    username = ""
+    password = ""
         
     # Data in the advertisement  
     Title = 'Apple iPhone 12 mini 91 % kondycja baterii ładowarka kabel lightning' #must be less than 70 characters
