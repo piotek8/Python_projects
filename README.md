@@ -166,8 +166,7 @@ Start the server
 
     ...in progress
 
-![AutoApp_Advertisements](https://user-images.githubusercontent.com/82182989/226763445-d54a46d7-f5dd-4130-9bc9-39a724401a3e.jpg))
-
+![AutoApp_Advertisements](https://user-images.githubusercontent.com/82182989/226767139-61bce2be-c0e9-4775-bfa3-9a7e2cce61d2.jpg)
 
 ## 👋 QR Code to scan the project
 
