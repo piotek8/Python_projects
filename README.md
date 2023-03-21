@@ -164,7 +164,7 @@ Start the server
 
 ### Method 2
 
-    ...in progress
+    ...in progress during works
 
 ![AutoApp_Advertisements](https://user-images.githubusercontent.com/82182989/226767139-61bce2be-c0e9-4775-bfa3-9a7e2cce61d2.jpg)
 
