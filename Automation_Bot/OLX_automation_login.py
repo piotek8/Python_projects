@@ -1,3 +1,4 @@
+
 # Used to import the webdriver from selenium
 from selenium import webdriver 
 import os
@@ -39,36 +40,6 @@ if __name__ == '__main__':
                              '//*[@id="__next"]/div/div/div/div/main/div/div[2]/div/form/button[2]/div').click()
 
 
-
-# TRY TRY TRY TRY TRY TRY
-
-        #open("C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main",'a')
-        #with open('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main', 'r+') as f:
-        #f = open ('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main.js')
-        # czyli otworz plik albo dodaj go do konsoli w np. chrome  u mnie driverr
-        # plik lokalizuje, musi jakby go zaimportowac do konsoli, do przegladarki
-        #f.readline()
-        #f.close()
-        
-        
-        #f = open ('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main.js')
-        #zawartosc = f.read()
-        #f.close()
-        
-        #js2py.run_file (f)
-        #js2py.run_file('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/jsmain')
-#        with open("C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main", 'a') as file:
-#        file.write("if [CUID] = -1 then"
-#            "function GetCUID() { return 0; }"
-#        "else"
-#            "function GetCUID() { return [CUID] });")
-
-       # f = get ('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/main.js')
-       # driver.execute_script(f)
-
-# TRY TRY TRY TRY TRY TRY
-
-      
         pass
         driver.implicitly_wait(26) # or can use sleep(16)    
     
@@ -87,7 +58,7 @@ if __name__ == '__main__':
         
        #driver.find_element('xpath', #set Category advertisement
        #                     '//*[@id="posting-form"]/main/div[1]/div[1]/div/div[1]/div[1]/div/div/div/div/textarea').click()      
-       # I didn't set category because 
+       # I didn't set category because she set herself up
 
         def photos(): #creating a function that adds images to cells
             c1 = driver.find_element(By.CSS_SELECTOR, #set Photos jpg in cell 1
@@ -413,7 +384,7 @@ if __name__ == '__main__':
          
 
         D = driver.find_element(By.CSS_SELECTOR,   # this option find OLX button 
-                             '.switch__toggle.css-2tc5k6')
+                             '.switch__toggle.css-1e6z5rf') 
         if Delivery == 'no':     # In this function, if you don't need delivery ,                  
             D.click()            #              press the button                     
             pass
@@ -438,16 +409,14 @@ if __name__ == '__main__':
         driver.find_element(By.CLASS_NAME,'css-18l8bp6').click()  # press the select button        
         driver.implicitly_wait(5) 
         driver.find_element('xpath', '//*[@id="root"]/div/main/div/div/div[2]/div[1]/a[2]/span/span').click()
-   
-    
+        sleep(4294967) 
+        sleep(4294967)   
     #    
     #    driver.find_element('xpath', # press the buttom - "Podgląd ogłoszenia"
     #                         '//*[@id="posting-form"]/main/div[1]/div[7]/div/button[1]/span/span').click()  
-       
-        sleep(4294967) 
+         
 
                 
-
 
 #    D  E  S  C  R  I  P  T  O  N
  
@@ -477,7 +446,7 @@ if __name__ == '__main__':
     Location = 'Warszawa' # set location
     Phone_Number = '500400300' # set phone number
     Negotiable = 'yes'  # write 'yes' when the price is negotiable , if not write 'no'
-    State = 'new'   # Set which state you want.You can use polish or english langugage : ( used / new / broken ) or (Używane / Nowe / Uszkodzone)
+    State = 'used'   # Set which state you want.You can use polish or english langugage : ( used / new / broken ) or (Używane / Nowe / Uszkodzone)
     Phone_Model = 'iPhone 12 mini'                       # write iPhone model:  
     #                                (looks like this: 'iPhone, space buttom, which model) 
     #                                (for example: iPhone 14 Pro   or  iPhone 14 Pro Max)
@@ -488,13 +457,6 @@ if __name__ == '__main__':
     #                                 (looks like this: 'what size , _ , which courier')
     #                                           (for example: 'L_inPost') 
 
- 
-   #Używane = driver.find_element(By.CLASS_NAME,'css-1n05x61')
-   #Nowe = driver.find_element(By.CLASS_NAME,'css-lihuun')
-   #Uszkodzone = driver.find_element(By.CLASS_NAME,'css-lihuun')
-#       state = 
-    #options
-    
     # The photos to load #C:\Users\Piotr\Desktop\kurs\py coursera google crash\OLX_Bot\Photos
     P1 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/1.jpeg' 
     P2 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/2.jpeg'
@@ -512,4 +474,17 @@ if __name__ == '__main__':
     # Call the function
     startAutoLogin(username, password, url)
 
+    # The photos to load #C:\Users\Piotr\Desktop\kurs\py coursera google crash\OLX_Bot\Photos
+    P1 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/1.jpeg' 
+    P2 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/2.jpeg'
+    P3 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/3.jpeg'
+    P4 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/4.jpeg'
+    P5 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/5.jpeg'
+    P6 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/6.jpeg'
+    #P7 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/7.jpeg'
+    #P8 = 'C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/8.jpeg'
+    allPhotos = P1 + " \n " + P2 + " \n " + P3 + " \n " + P4 + " \n " + P5 + " \n " + P6    
     
+    
+    
+
