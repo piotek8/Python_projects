@@ -28,16 +28,16 @@ if __name__ == '__main__':
         # find the id or name or class of
         # username by inspecting on username input
         driver.find_element('xpath',
-                         '//*[@id="__next"]/div/div/div/div/main/div/div[2]/div/form/div[1]/div/div/input').send_keys(login)
+                         "(//input[@type='email'])[1]").send_keys(login)
 
         # find the password by inspecting on password input
         driver.find_element('xpath',
-                             '//*[@id="__next"]/div/div/div/div/main/div/div[2]/div/form/div[2]/div/div/div/input').send_keys(password)
+                             "(//input[@type='password'])[1]").send_keys(password)
 
 
         # click on submit
         driver.find_element('xpath',
-                             '//*[@id="__next"]/div/div/div/div/main/div/div[2]/div/form/button[2]/div').click()
+                             "(//button[@type='submit'])[1]").click()
 
 
         pass
