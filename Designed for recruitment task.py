@@ -18,10 +18,10 @@ def make_commands():
     input_element.send_keys(Keys.CONTROL, 'a')
     input_element.send_keys(Keys.BACKSPACE)   
     input_element.send_keys(str(i))
-    time.sleep(1) # czekaj 1 sekundę
+    time.sleep(1) 
     submit_button = driver.find_element('xpath', "//div[@class='task-buttton submit']")
     submit_button.click()
-    time.sleep(1) # czekaj 1 sekundę
+    time.sleep(1) 
     close_button = driver.find_element('xpath', "//span[@class='close-button']")
     close_button.click()
 
