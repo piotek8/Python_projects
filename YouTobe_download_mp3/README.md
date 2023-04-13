@@ -66,7 +66,7 @@ The script can be included in: IDE(Visual Studio Code or other) or CMD,
 then click any button on the keyboard until the following message appears: "Enter YouTube video link or write 'exit' to quit:". 
 Enter the link and wait a few seconds for the download bar to appear and download. 
 A message will be displayed: "MP3 audio file has been downloaded and saved as..."
-Then you can download the file from the next link, and if you want to finish type exit
+Then you can download the file from the next link, and if you want to finish type 'exit'
 ```
 
 
