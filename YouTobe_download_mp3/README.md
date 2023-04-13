@@ -1,5 +1,5 @@
 
-# 🐍 Automated YouTube mp3 download script
+# Automated YouTube mp3 download script
 
 
 ## 👨‍💻 The project 
