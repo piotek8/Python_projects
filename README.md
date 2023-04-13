@@ -23,7 +23,7 @@ You need to install the necessary libraries in the terminal in your environment 
 ![pip install instruction](https://user-images.githubusercontent.com/82182989/226630656-e2937091-8d83-48ff-9c6e-094fed5b6491.jpg)
 
 
-## 📜 Selenium Python Bindings Documentation
+## 📜Python Bindings Documentation
 
 Use this documentations for learning and finding solutions to problems.
 
