@@ -3,6 +3,10 @@
 ## 👨‍💻 The project 
 A program that, after filling in the necessary data, automatically publishes an advertisement on the OLX, eBay portal in the category of sales of Apple phones. The software is regularly developed by me.
 
+## How it works in practice?
+
+https://user-images.githubusercontent.com/82182989/226676476-a32d867b-4b63-435e-a936-220e7ec605e0.mp4
+
 ## 💬 Installation instruction 
 At the beginning, you must install the software that is mandatory to start the project, it is presented below.
  - [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows)
