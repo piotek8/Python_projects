@@ -3,14 +3,13 @@
 ## 👨‍💻 The project 
 A program that, after filling in the necessary data, automatically publishes an advertisement on the OLX, eBay portal in the category of sales of Apple phones. The software is regularly developed by me.
 
-## How it works in practice?
-
+## 🤔 How it works in practice?
+#### OLX
 https://user-images.githubusercontent.com/82182989/226676476-a32d867b-4b63-435e-a936-220e7ec605e0.mp4
 
 ## 💬 Installation instruction 
 At the beginning, you must install the software that is mandatory to start the project, it is presented below.
  - [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows)
- - [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows)   
  - [Python 3+ version](https://realpython.com/installing-python/#how-to-install-python-on-windows)
  - [Google Chrome](https://www.google.com/intl/pl_pl/chrome/) 
  - [Chrome driver to Chrome](https://chromedriver.chromium.org/getting-started)
@@ -31,22 +30,37 @@ You need to install the necessary libraries in the terminal in your environment 
 ```
 ![pip install instruction](https://user-images.githubusercontent.com/82182989/226630656-e2937091-8d83-48ff-9c6e-094fed5b6491.jpg)
 
-@@ -33,9 +27,9 @@ You need to install the necessary libraries in the terminal in your environment
+## 📜 Selenium Python Bindings Documentation
 
 Use this documentations for learning and finding solutions to problems.
 
 [Selenium with Python Documentation](https://selenium-python.readthedocs.io/)
-[Pytube with Python Documentation](https://pytube.io/en/latest/)
-
 [Stack Overflow](https://stackoverflow.com/)
-[ChatGPT](https://openai.com/blog/chatgpt)
+
 
 
 ## 🔗 Run Locally
-@@ -73,108 +67,13 @@ Start the server
+
+Clone the project
+
+```git clone https://github.com/piotek8/Python_projects.git```
+Go to the project directory
+
+```cd Python_projects```
+Install dependencies
+
+```npm install```
+Start the server
+
+```npm run start```
+
+
 [eBay](https://github.com/piotek8/Python_projects/blob/main/Automation_Bot/eBay_automation_login_py.py)
 
-
+## ⌨ Source Code
+ - [OLX](https://github.com/piotek8/Python_projects/blob/main/Automation_Bot/OLX_automation_login.py)   
+ - [eBay](https://github.com/piotek8/Python_projects/blob/main/Automation_Bot/eBay_automation_login_py.py)   
+ 
 ## 📁 How to entering data into the program
 ### Method 1
 #### OLX
