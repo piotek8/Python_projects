@@ -34,8 +34,8 @@ You need to install the necessary libraries in the terminal in your environment 
 
 Use this documentations for learning and finding solutions to problems.
 
-[Selenium with Python Documentation](https://selenium-python.readthedocs.io/)
-[Stack Overflow](https://stackoverflow.com/)
+- [Selenium with Python Documentation](https://selenium-python.readthedocs.io/)
+- [Stack Overflow](https://stackoverflow.com/)
 
 
 
@@ -43,19 +43,27 @@ Use this documentations for learning and finding solutions to problems.
 
 Clone the project
 
-```git clone https://github.com/piotek8/Python_projects.git```
+```
+git clone https://github.com/piotek8/Python_projects.git
+```
 Go to the project directory
 
-```cd Python_projects```
+```
+cd Python_projects
+```
 Install dependencies
 
-```npm install```
+```
+npm install
+```
 Start the server
 
-```npm run start```
+```
+npm run start
+```
 
 
-[eBay](https://github.com/piotek8/Python_projects/blob/main/Automation_Bot/eBay_automation_login_py.py)
+
 
 ## ⌨ Source Code
  - [OLX](https://github.com/piotek8/Python_projects/blob/main/Automation_Bot/OLX_automation_login.py)   
