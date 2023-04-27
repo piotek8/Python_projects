@@ -62,7 +62,8 @@ if __name__ == '__main__':
 
         def photos(): #creating a function that adds images to cells
             c1 = driver.find_element(By.CSS_SELECTOR, #set Photos jpg in cell 1
-                                'body > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > main:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(2)')
+                                "label[class='css-10j97fd'] input[type='file']")
+            driver.implicitly_wait(10)            
             c1.send_keys(allPhotos)
 
            #c1.send_keys('C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/1.jpeg \n C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/2.jpeg \n C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/3.jpeg \n C:/Users/Piotr/Desktop/kurs/py coursera google crash/OLX_Bot/iPhone 12 mini zielony/4.jpeg ')  
@@ -108,7 +109,7 @@ if __name__ == '__main__':
         driver.find_element('xpath', #set Price advertisement
                              '//*[@id="parameters.price.price"]').send_keys(Price)        
 
-        #print('Is negotiable ? (write yes or no)')
+        # print('Is negotiable ? (write yes or no)')
         yes = driver.find_element('xpath',      #set negotiable option
                              '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[1]/div/div[1]/div/div/div/div[3]/span')
         if Negotiable == 'yes':  # In this function, if the price is negotiable, 
@@ -118,72 +119,113 @@ if __name__ == '__main__':
            
         driver.implicitly_wait(0.1)
         
+      
+        driver.find_element('xpath',"(//button[@placeholder='Wybierz'][normalize-space()='Wybierz'])[1]").click()
+        
+        driver.implicitly_wait(2)
+        
+        # set the memory you have in your device
+        p32GB = driver.find_element('xpath',      
+                              "(//a[normalize-space()='32GB'])[1]")
+        p64GB = driver.find_element('xpath',      
+                              "(//a[normalize-space()='64GB'])[1]")
+        p128GB = driver.find_element('xpath',      
+                              "(//a[normalize-space()='128GB'])[1]")
+        p256GB = driver.find_element('xpath',      
+                              "(//a[normalize-space()='256GB'])[1]")
+        p512GB = driver.find_element('xpath',      
+                              "(//a[normalize-space()='512GB'])[1]")
+        inna = driver.find_element('xpath',      
+                              "(//a[normalize-space()='Inna'])[1]")
+        
+        match Memory:
+            case '32':
+                p32GB.click()
+            case '64':
+                p64GB.click()
+            case '128':
+                p128GB.click()
+            case '256':
+                p256GB.click()
+            case '512':
+                p512GB.click()
+            case '32':
+                inna.click()
 
-        driver.find_element(By.CLASS_NAME,'css-e010pl').click()  # press the select button
+        driver.find_element(By.CSS_SELECTOR,"div[data-cy='parameters.state'] button[placeholder='Wybierz']").click()  # press the select button
         driver.implicitly_wait(0.5)
-     
+        sleep(3)
 
         Uzy = driver.find_element('xpath',
-                                  '(//a[contains(text(),"Używane")])[1]')     # set state: Używane         
+                                  "(//li[@class='css-t0lbh8'])[1]")     # set state: Używane         
         Now = driver.find_element('xpath',
-                                  '//a[normalize-space()="Nowe"]')            # set state: Nowe  
+                                  "(//div[@class='css-8bnjc8'])[2]")    # set state: Nowe  
         Usz = driver.find_element('xpath',
-                                  '(//a[normalize-space()="Uszkodzone"])[1]') # set state: Uszkodzone
+                                  "(//div[@class='css-1drdue'])[3]")    # set state: Uszkodzone
         
+        match State:
+            case 'uzywane' | 'używane' | 'used' : 
+                Uzy.click()                          
+            case 'nowe' | 'new':  
+                Now.click()
+            case 'uszkodzone' | 'broken':
+                Usz.click()       
+            
+       # if State == 'uzywane' or State == 'używane' or State == 'used' :        # | can be like or
+       #     Uzy.click()                          
+       # elif State == 'nowe' or State == 'new':  
+       #     Now.click()
+       # elif State == 'uszkodzone' or State == 'broken':
+       #     Usz.click()
+       # else:
+       #     print('APPLICATION ERROR. You need to set the status of the announcement')     
+       
+        scrooll_down = driver.find_element(By.XPATH,'//input[@placeholder="Wybierz"]')
         
-        # in this function, depending on the value of the State variable,
-        #           enters the data from the commands above,
-        #   if write something other you can see information ERROR
-        if State == 'uzywane' or State == 'używane' or State == 'used' :        # | can be like or
-            Uzy.click()                          
-        elif State == 'nowe' or State == 'new':  
-            Now.click()
-        elif State == 'uszkodzone' or State == 'broken':
-            Usz.click()
-        else:
-            print('APPLICATION ERROR. You need to set the status of the announcement')             
-
+        #scroll down to find options
+        driver.execute_script('arguments[0].scrollIntoView();',scrooll_down)
+        driver.implicitly_wait(0.5)  
 
         driver.find_element(By.CLASS_NAME,'css-6z56jw').click()  # press the select button
-        driver.implicitly_wait(0.5)     
+        driver.implicitly_wait(5)
 
-        iPhone_14 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/div')               
-        iPhone_14_Plus = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[2]/div/div/div/a')
-        iPhone_14_Pro = driver.find_element('xpath','//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[3]/div/div/div/a')
-        iPhone_14_Pro_Max = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[4]/div/div/div/a')
-        iPhone_13 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[5]/div/div/div/a')
-        iPhone_13_mini = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[6]/div/div/div/a')
-        iPhone_13_Pro = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[7]/div/div/div/a')
-        iPhone_13_Pro_Max = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[8]/div/div/div/a')
-        iPhone_12 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[9]/div/div/div/a')
-        iPhone_12_mini = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[10]/div/div/div/a')
-        iPhone_12_Pro = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[11]/div/div/div/a')
-        iPhone_12_Pro_Max = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[12]/div/div/div/a')
-        iPhone_11 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[13]/div/div/div/a')
-        iPhone_11_Pro = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[14]/div/div/div/a')
-        iPhone_11_Pro_Max = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[15]/div/div/div/a')
-        iPhone_SE = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[16]/div/div/div/a')
-        iPhone_X = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[17]/div/div/div/a')
-        iPhone_XS = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[18]/div/div/div/a')
-        iPhone_XS_Max = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[19]/div/div/div/a')
-        iPhone_XR = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[20]/div/div/div/a')
-        iPhone_8 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[21]/div/div/div/a')
-        iPhone_8_Plus = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[22]/div/div/div/a')
-        iPhone_7 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[23]/div/div/div/a')
-        iPhone_7_Plus = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[24]/div/div/div/a')
-        iPhone_6 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[25]/div/div/div/a')
-        iPhone_6_Plus = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[26]/div/div/div/a')
-        iPhone_6S = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[27]/div/div/div/a')
-        iPhone_6S_Plus = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[28]/div/div/div/a')
-        iPhone_5 = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[29]/div/div/div/a')
-        iPhone_5C = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[30]/div/div/div/a')
-        iPhone_5S = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[31]/div/div/div/a')
-        iPhone_4  = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[32]/div/div/div/a')
-        iPhone_3  = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[33]/div/div/div/a')
-        iPhone_3G  = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[34]/div/div/div/a')
-        iPhone_3GS  = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[35]/div/div/div/a')
-        iPhone_1gen = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[36]/div/div/div/a')
-        Inne_modele = driver.find_element('xpath', '//*[@id="posting-form"]/main/div[1]/div[4]/div/div[2]/div/div[1]/div[4]/div/div/ul/li[37]/div/div/div/a')
+        iPhone_14 = driver.find_element('xpath', "//a[normalize-space()='iPhone 14']")               
+        iPhone_14_Plus = driver.find_element('xpath', "//a[normalize-space()='iPhone 14 Plus']")
+        iPhone_14_Pro = driver.find_element('xpath', "//a[normalize-space()='iPhone 14 Pro']")
+        iPhone_14_Pro_Max = driver.find_element('xpath', "//a[normalize-space()='iPhone 14 Pro Max']")
+        iPhone_13 = driver.find_element('xpath', "//a[normalize-space()='iPhone 13']")
+        iPhone_13_mini = driver.find_element('xpath', "//a[normalize-space()='iPhone 13 mini']")
+        iPhone_13_Pro = driver.find_element('xpath', "//a[normalize-space()='iPhone 13 Pro']")
+        iPhone_13_Pro_Max = driver.find_element('xpath', "//a[normalize-space()='iPhone 13 Pro Max']")
+        iPhone_12 = driver.find_element('xpath', "//a[normalize-space()='iPhone 12']")
+        iPhone_12_mini = driver.find_element('xpath', "//a[normalize-space()='iPhone 12 mini']")
+        iPhone_12_Pro = driver.find_element('xpath', "//a[normalize-space()='iPhone 12 Pro']")
+        iPhone_12_Pro_Max = driver.find_element('xpath', "//a[normalize-space()='iPhone 12 Pro Max']")
+        iPhone_11 = driver.find_element('xpath', "//a[normalize-space()='iPhone 11']")
+        iPhone_11_Pro = driver.find_element('xpath', "//a[normalize-space()='iPhone 11 Pro']")
+        iPhone_11_Pro_Max = driver.find_element('xpath', "//a[normalize-space()='iPhone 11 Pro Max']")
+        iPhone_SE = driver.find_element('xpath', "//a[normalize-space()='iPhone SE']")
+        iPhone_X = driver.find_element('xpath', "//a[normalize-space()='iPhone X']")
+        iPhone_XS = driver.find_element('xpath', "//a[normalize-space()='iPhone XS']")
+        iPhone_XS_Max = driver.find_element('xpath', "//a[normalize-space()='iPhone XS Max']")
+        iPhone_XR = driver.find_element('xpath', "//a[normalize-space()='iPhone XR']")
+        iPhone_8 = driver.find_element('xpath', "//a[normalize-space()='iPhone 8']")
+        iPhone_8_Plus = driver.find_element('xpath', "//a[normalize-space()='iPhone 8 Plus']")
+        iPhone_7 = driver.find_element('xpath', "//a[normalize-space()='iPhone 7']")
+        iPhone_7_Plus = driver.find_element('xpath', "//a[normalize-space()='iPhone 7 Plus']")
+        iPhone_6 = driver.find_element('xpath', "//a[normalize-space()='iPhone 6']")
+        iPhone_6_Plus = driver.find_element('xpath', "//a[normalize-space()='iPhone 6 Plus']")
+        iPhone_6S = driver.find_element('xpath', "//a[normalize-space()='iPhone 6S']")
+        iPhone_6S_Plus = driver.find_element('xpath', "//a[normalize-space()='iPhone 6S Plus']")
+        iPhone_5 = driver.find_element('xpath', "//a[normalize-space()='iPhone 5']")
+        iPhone_5C = driver.find_element('xpath', "//a[normalize-space()='iPhone 5C']")
+        iPhone_5S = driver.find_element('xpath', "//a[normalize-space()='iPhone 5S']")
+        iPhone_4  = driver.find_element('xpath', "//a[normalize-space()='iPhone 4']")
+        iPhone_3  = driver.find_element('xpath', "//a[normalize-space()='iPhone 3']")
+        iPhone_3G  = driver.find_element('xpath', "//a[normalize-space()='iPhone 3G']")
+        iPhone_3GS  = driver.find_element('xpath', "//a[normalize-space()='iPhone 3GS']")
+        iPhone_1gen = driver.find_element('xpath', "//a[normalize-space()='iPhone 1 gen']")
+        Inne_modele = driver.find_element('xpath', "//a[normalize-space()='Inne modele']")
 
         match Phone_Model:
 
@@ -409,7 +451,6 @@ if __name__ == '__main__':
         driver.find_element(By.CLASS_NAME,'css-18l8bp6').click()  # press the select button        
         driver.implicitly_wait(5) 
         driver.find_element('xpath', '//*[@id="root"]/div/main/div/div/div[2]/div[1]/a[2]/span/span').click()
-        sleep(4294967) 
         sleep(4294967)   
     #    
     #    driver.find_element('xpath', # press the buttom - "Podgląd ogłoszenia"
@@ -446,6 +487,7 @@ if __name__ == '__main__':
     Location = 'Warszawa' # set location
     Phone_Number = '500400300' # set phone number
     Negotiable = 'yes'  # write 'yes' when the price is negotiable , if not write 'no'
+    Memory = '64' # write how much memory do you have (32 / 64 / 128 / 256 / 512 / Inna )    
     State = 'used'   # Set which state you want.You can use polish or english langugage : ( used / new / broken ) or (Używane / Nowe / Uszkodzone)
     Phone_Model = 'iPhone 12 mini'                       # write iPhone model:  
     #                                (looks like this: 'iPhone, space buttom, which model) 
